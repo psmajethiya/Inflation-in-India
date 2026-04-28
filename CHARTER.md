@@ -37,25 +37,15 @@
 ---
 
 ## 1. Problem and stakeholder
-
-One paragraph. Who is the specific person, institution, or policy body that would care about the answer, and what decision does the answer inform? Generic "policymakers" is not a stakeholder; "the Ministry of Petroleum and Natural Gas deciding whether to extend PMUY subsidies in FY 2026-27" is.
-
-we are doin this project
+The Reserve Bank of India's Monetary Policy Committee sets the repo rate under a 4% CPI inflation target. During the 2022–23 surge, CPI inflation peaked around 7.8% YoY. The MPC's ex-post communication attributed the surge largely to external supply shocks (oil, wheat, fertiliser). We want to quantify, month-by-month, how much of observed CPI inflation over 2015–2025 is statistically attributable to monetary policy variables, external shocks, and domestic demand — as input to a hypothetical policy retrospective an MPC analyst would present to the board. Particular attention is paid to the 2022–23 inflation episode. Prior work (Dua and Goel, 2021) stops in 2017 and therefore omits COVID and the post-2020 inflation dynamics; our contribution is to extend this accounting to the recent period using flexible ML methods.
 
 ---
 
 ## 2. Main outcome variable
-
-The single number your project centres on. State:
-
-- **Name** of the variable
-- **Unit** (percentage, Rs/month, points, deaths per 1000, etc.)
-- **Source table/column/field**
-- **Population / panel** (which rows: which years, which geographies, which people)
-
-Only one main outcome. Secondary outcomes go under "Scope limits" as things you *may* report but will not be graded on.
-
-*Write here:*
+- **Name**: month-over-month CPI inflation, India, all-items
+- **Unit**: percentage points (m/m)
+- **Source**: MoSPI CPI release, all-India combined series (CPI_C_GEN)
+- **Population / panel**: monthly observations, Jan 2015 – Dec 2025 (~132 months); train on Jan 2015 – Dec 2021, evaluate on Jan 2022 – Dec 2025 (48 months held-out)
 
 ---
 
@@ -97,16 +87,34 @@ One sentence the data can prove wrong. A sign, a threshold, or a rank ordering. 
 
 ## 6. Data sources and access plan
 
-For each source:
+All sources are open-access and require no login or API key.
 
-- **Name and URL/API endpoint**
-- **Licence or permission to use**
-- **Access method** (direct download, API call, authenticated portal)
-- **A 10-line script or notebook cell** that fetches one row and prints it
+MoSPI CPI (all-India combined, monthly):
+Landing: https://www.mospi.gov.in/cpi
+Access: downloaded from the eSankhyiki catalogue (CPI all-items, combined series, base 2012=100).
+Login required: no.
 
-If any source requires manual scraping, permissions, or a login you do not yet have, flag it here with a mitigation plan.
+EPWRF India Time Series — IIP (general index, monthly):
+Landing: https://www.epwrfits.in/
+Access: downloaded manually via institutional access (monthly general IIP index, base 2011–12 = 100).
+Login required: yes (institutional subscription).
+Mitigation: data exported as CSV and committed under data/ for reproducibility.
 
-*Write here:*
+RBI repo rate (monthly end-of-period):
+Access: constructed manually from RBI Monetary Policy press releases (https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx).
+Login required: no.
+
+FRED INR/USD exchange rate (monthly):
+Endpoint: https://fred.stlouisfed.org/graph/fredgraph.csv?id=EXINUS
+Access: direct CSV download via pandas.
+Login required: no.
+
+FRED Brent oil price (daily → monthly average):
+Endpoint: https://fred.stlouisfed.org/graph/fredgraph.csv?id=DCOILBRENTEU
+Access: direct CSV download via pandas, aggregated to monthly frequency.
+Login required: no.
+
+(A probe cell for each source is included in notebooks/00_data_probe.ipynb.)
 
 ---
 
