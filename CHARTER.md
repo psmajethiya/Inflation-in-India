@@ -51,15 +51,7 @@ The Reserve Bank of India's Monetary Policy Committee sets the repo rate under a
 
 ## 3. Main quantitative success threshold
 
-A single numeric bar. Your project is a success if the delivered metric crosses this bar, and a failure if it does not. Pick one form:
-
-- **Predictive:** "Out-of-sample [metric] on [held-out slice] is at most X, versus baseline Y."
-- **Causal:** "Point estimate of [parameter] has 95% CI excluding zero, and |estimate| ≥ X [unit]."
-- **Descriptive:** "Produce stratified estimates of [outcome] across [N ≥ __] strata, each with sample size ≥ __ and documented standard error."
-
-If you cannot write a number, you do not yet have a project — you have a topic. Go back to Section 2.
-
-*Write here:*
+Out-of-sample RMSE on the 2022-01 to 2025-12 held-out slice must be at least 20% lower than the AR(1) baseline RMSE computed on the same slice, with a minimum absolute reduction of 0.05 percentage points per month.
 
 ---
 
