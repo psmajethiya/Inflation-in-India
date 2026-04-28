@@ -30,7 +30,7 @@
 | Project type | Predictive |
 | Estimated hours per person | 50 |
 | Charter version | v1 |
-| Date | 2026-04-27 |
+| Date | 2026-04-28 |
 
 **Project type notes.** Predictive = you are trying to forecast or predict a quantity. Causal = you are trying to estimate the effect of a policy or intervention. Descriptive = you are measuring patterns or disparities without making a causal claim. The success threshold looks different for each type, so pick the one that fits your main question.
 
@@ -40,7 +40,7 @@
 
 One paragraph. Who is the specific person, institution, or policy body that would care about the answer, and what decision does the answer inform? Generic "policymakers" is not a stakeholder; "the Ministry of Petroleum and Natural Gas deciding whether to extend PMUY subsidies in FY 2026-27" is.
 
-*Write here:*
+we are doin this project
 
 ---
 
