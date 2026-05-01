@@ -49,27 +49,28 @@ Most sources are open-access and require no login or API key. EPWRF access is av
 
 MoSPI CPI (all-India combined, monthly):
 Landing: https://www.mospi.gov.in/cpi
-Access: downloaded from the eSankhyiki catalogue (CPI all-items, combined series, base 2012=100).
+Access: downloaded from the eSankhyiki catalogue (CPI all-items, combined series, base 2012=100) and committed as data/cpi_clean.csv for reproducibility; loaded via pandas.
 Login required: no.
 
 EPWRF India Time Series — IIP (general index, monthly):
 Landing: https://www.epwrfits.in/
 Access: downloaded manually via institutional access (monthly general IIP index, base 2011–12 = 100).
 Login required: yes (institutional subscription).
-Mitigation: data exported as CSV and committed under data/ for reproducibility.
+Mitigation: data exported as CSV and committed under data/iip_clean.csv for reproducibility.
 
 RBI repo rate (monthly end-of-period):
-Access: constructed manually from RBI Monetary Policy press releases (https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx).
+Source: https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx
+Access: constructed manually from RBI Monetary Policy press releases and committed as data/repo_clean.csv for reproducibility; loaded via pandas.
 Login required: no.
 
 FRED INR/USD exchange rate (monthly):
 Endpoint: https://fred.stlouisfed.org/graph/fredgraph.csv?id=EXINUS
-Access: direct CSV download via pandas.
+Access: downloaded from FRED and committed as data/fx_clean.csv for reproducibility; loaded via pandas.
 Login required: no.
 
 FRED Brent oil price (daily → monthly average):
 Endpoint: https://fred.stlouisfed.org/graph/fredgraph.csv?id=DCOILBRENTEU
-Access: direct CSV download via pandas, aggregated to monthly frequency.
+Access: downloaded from FRED, aggregated to monthly frequency, and committed as data/oil_clean.csv for reproducibility; loaded via pandas.
 Login required: no.
 
 (A probe cell for each source is included in notebooks/00_data_probe.ipynb.)
